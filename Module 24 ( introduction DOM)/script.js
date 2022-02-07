@@ -17,3 +17,13 @@ console.log(result1);
 
 const result2 = class1.childNodes;
 console.log(result2); // output: nodeList
+
+
+// getAttribute 
+const find = document.querySelectorAll('header ul li')[0];
+const result = find.getAttribute('id');
+console.log(result);
+
+// setAttribute
+const resultUpdate = find.setAttribute('title', 'Hello i am js tooltip');
+console.log(resultUpdate);
