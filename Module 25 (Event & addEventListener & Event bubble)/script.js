@@ -6,15 +6,8 @@ textArea.addEventListener('keypress', function(event) {
     count++
     let text = event.key;
     para.innerHTML = "You have press " + count;
-
-
+    // if (textArea.value - 1) {
+    //     count--
+    // }
 
 });
-
-// textArea.addEventListener('keypress', function(event) {
-//     const text = event.key
-//     if (--text) {
-//         count--
-//     }
-
-// });

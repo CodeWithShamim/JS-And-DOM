@@ -12,6 +12,25 @@
     <textarea name="" id="textArea" cols="30" rows="10"></textarea>
     <p id="para"></p>
 
+    <!-- find value from input  -->
+    <input type="text" name="" id="input" />
+    <button id="update-btn">Update</button>
+    <p id="para"></p>
+
+    <script>
+        const updateBtn = document
+            .getElementById("update-btn")
+            .addEventListener("click", function() {
+                const inputValue = document.getElementById("input");
+                const para = document.getElementById("para");
+                // find value from Input using (value)
+                para.innerText = inputValue.value;
+
+                // remove value from input box
+                para.innerText = "";
+            });
+    </script>
+
     <script src="script.js"></script>
 </body>
 
