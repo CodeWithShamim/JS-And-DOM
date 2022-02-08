@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More event & delete button</title>
+</head>
+
+<body>
+    <h1>Say somthing!</h1>
+    <section>
+        <h2 id="secret-info">hello</h2>
+        <input type="text" name="" id="delete-key" placeholder="please type delete" />
+        <button id="delete-btn" disabled>Delete</button>
+    </section>
+    <script>
+        document
+            .getElementById("delete-btn")
+            .addEventListener("click", function() {
+                document.getElementById("secret-info").style.display = "none";
+            });
+
+        // focus
+        document
+            .getElementById("delete-key")
+            .addEventListener("focus", function() {
+                document.body.style.backgroundColor = "red";
+            });
+
+        // blur
+        document
+            .getElementById("delete-key")
+            .addEventListener("blur", function() {
+                document.body.style.backgroundColor = "";
+            });
+
+        // keydown
+        // const deleteKey = document.getElementById("delete-key");
+        // deleteKey.addEventListener("keydown", function() {
+        //     const value = deleteKey.value;
+        //     console.log(value);
+        // });
+
+        // keypress
+        // const deleteKey = document.getElementById("delete-key");
+        // deleteKey.addEventListener("keypress", function() {
+        //     const value = deleteKey.value;
+        //     console.log(value);
+        // });
+
+        // keyup !!!!!!!!!!!!!!Useful
+        // const deleteKey = document.getElementById("delete-key");
+        // deleteKey.addEventListener("keyup", function() {
+        //     const value = deleteKey.value;
+        //     console.log(value);
+        // });
+
+        // change !important
+        // const deleteKey = document.getElementById("delete-key");
+        // deleteKey.addEventListener("change", function() {
+        //     const value = deleteKey.value;
+        //     console.log(value);
+        // });
+
+        // event
+        const deleteKey = document.getElementById("delete-key");
+        deleteKey.addEventListener("keyup", function(event) {
+            if (event.target.value == "delete") {
+                document.getElementById("delete-btn").removeAttribute("disabled");
+            } else {
+                document.getElementById("delete-btn").setAttribute("disabled", true);
+            }
+        });
+    </script>
+</body>
+
+</html>
