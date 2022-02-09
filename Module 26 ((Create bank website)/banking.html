@@ -19,10 +19,11 @@
     </header>
 
     <main>
-        <section class="grid grid-cols-3 gap-4 p-5 mt-12 w-3/4 mx-auto">
+        <!-- card section  -->
+        <section class="grid grid-cols-3 gap-5 mt-12 w-3/4 mx-auto">
             <!-- card 1 -->
             <div class="bg-blue-300 rounded-md p-8">
-                <h1 class="text-4xl text-white my-2">Diposit</h1>
+                <h1 class="text-4xl text-white my-2">Deposit</h1>
                 <h2 class="text-4xl text-white">$00</h2>
             </div>
             <!-- card 2 -->
@@ -34,6 +35,41 @@
             <div class="bg-yellow-300 rounded-md p-8">
                 <h1 class="text-4xl text-white my-2">Balance</h1>
                 <h2 class="text-4xl text-white">$1000</h2>
+            </div>
+        </section>
+
+        <!-- Deposit and Withdraw -->
+        <section class="grid grid-cols-2 gap-5 w-3/4 mx-auto my-10">
+            <!-- deposit -->
+            <div class="bg-blue-300 rounded-md">
+                <h2 class="font-semibold text-3xl p-3 text-center">
+                    Choose your deposit amount
+                </h2>
+                <form>
+                    <input id="user-email" type="text" placeholder="write deposit amount$" class="w-3/4 mx-auto text-center mt-5 p-4 border-red-400 rounded-md block" />
+                    <!-- add button  -->
+                    <div class="text-center">
+                        <button id="submit-btn" class="bg-orange-500 text-white text-2xl font-semibold py-3 px-10 my-5 rounded">
+                Deposit
+              </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Withdraw -->
+            <div class="bg-yellow-200 rounded-md">
+                <h2 class="font-semibold text-3xl p-3 text-center">
+                    Choose your Withdraw amount
+                </h2>
+                <form>
+                    <input id="user-email" type="text" placeholder="write Withdraw amount$" class="w-3/4 mx-auto text-center mt-5 p-4 border-red-400 rounded-md block" />
+                    <!-- add button  -->
+                    <div class="text-center">
+                        <button id="submit-btn" class="bg-orange-500 text-white text-2xl font-semibold py-3 px-10 my-5 rounded">
+                Withdraw
+              </button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
