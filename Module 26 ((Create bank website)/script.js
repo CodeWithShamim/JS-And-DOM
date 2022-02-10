@@ -7,7 +7,7 @@ submitButton.addEventListener('click', function() {
     const passwordField = document.getElementById('user-password');
     const userPassword = passwordField.value;
     // conditon 
-    if (userEmail == 'shamimislamonline@gmail.com' && userPassword == '1234') {
+    if (userEmail == 'shamim' && userPassword == '1234') {
         window.open('banking.html');
         // window.location.href = "banking.html";
     } else {
