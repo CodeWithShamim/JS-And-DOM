@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banking page</title>
     <!-- add tailwind cdn link -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.0.14"></script>
 </head>
 
 <body>
@@ -24,17 +24,17 @@
             <!-- card 1 -->
             <div class="bg-blue-300 rounded-md p-8">
                 <h1 class="text-4xl text-white my-2">Deposit</h1>
-                <h2 class="text-4xl text-white">$00</h2>
+                <h2 class="text-4xl text-white">$<span id="deposit">00</span></h2>
             </div>
             <!-- card 2 -->
             <div class="bg-green-300 rounded-md p-8">
                 <h1 class="text-4xl text-white my-2">Withdraw</h1>
-                <h2 class="text-4xl text-white">$00</h2>
+                <h2 class="text-4xl text-white">$<span id="withdraw">10</span></h2>
             </div>
             <!-- card 3 -->
             <div class="bg-yellow-300 rounded-md p-8">
                 <h1 class="text-4xl text-white my-2">Balance</h1>
-                <h2 class="text-4xl text-white">$1000</h2>
+                <h2 class="text-4xl text-white">$<span id="balance">1000</span></h2>
             </div>
         </section>
 
@@ -46,14 +46,13 @@
                     Choose your deposit amount
                 </h2>
                 <form>
-                    <input id="user-email" type="text" placeholder="write deposit amount$" class="w-3/4 mx-auto text-center mt-5 p-4 border-red-400 rounded-md block" />
+                    <input id="deposit-value" type="text" placeholder="write deposit amount$" class="w-3/4 mx-auto text-center mt-5 p-4 border-red-400 rounded-md block" minlength="1" maxlength="7" />
                     <!-- add button  -->
-                    <div class="text-center">
-                        <button id="submit-btn" class="bg-orange-500 text-white text-2xl font-semibold py-3 px-10 my-5 rounded">
-                Deposit
-              </button>
-                    </div>
+                    <div class="text-center"></div>
                 </form>
+                <button id="deposit-btn" class="bg-orange-500 text-white text-2xl font-semibold py-3 px-10 my-5 rounded">
+            Deposit
+          </button>
             </div>
 
             <!-- Withdraw -->
@@ -62,17 +61,18 @@
                     Choose your Withdraw amount
                 </h2>
                 <form>
-                    <input id="user-email" type="text" placeholder="write Withdraw amount$" class="w-3/4 mx-auto text-center mt-5 p-4 border-red-400 rounded-md block" />
+                    <input id="withdraw-value" type="text" placeholder="write Withdraw amount$" class="w-3/4 mx-auto text-center mt-5 p-4 border-red-400 rounded-md block" minlength="1" maxlength="7" />
                     <!-- add button  -->
-                    <div class="text-center">
-                        <button id="submit-btn" class="bg-orange-500 text-white text-2xl font-semibold py-3 px-10 my-5 rounded">
-                Withdraw
-              </button>
-                    </div>
+                    <div class="text-center"></div>
                 </form>
+                <button id="withdraw-btn" class="bg-orange-500 text-white text-2xl font-semibold py-3 px-10 my-5 rounded">
+            Withdraw
+          </button>
             </div>
         </section>
     </main>
+
+    <script src="./banking.js"></script>
 </body>
 
 </html>
