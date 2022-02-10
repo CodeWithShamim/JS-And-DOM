@@ -24,7 +24,7 @@ depositButton.addEventListener('click', function() {
         newDepositValue = parseFloat(depositValue);
         deposit.innerText = previousDepositValue + newDepositValue;
 
-        // balance 
+        //set balance 
         const balanceText = balance.innerText;
         const newBalance = parseFloat(balanceText);
         balance.innerText = newBalance + newDepositValue;
@@ -46,6 +46,11 @@ withdrawButton.addEventListener('click', function() {
         previousWithdrawValue = parseFloat(withdraw.innerText);
         newWithdrawValue = parseFloat(withdrawValue);
         withdraw.innerText = previousWithdrawValue + newWithdrawValue;
+
+        //set balance 
+        const oldBalanceAmount = balance.innerText;
+        const oldBalance = parseFloat(oldBalanceAmount);
+        balance.innerText = oldBalance - newWithdrawValue;
     }
     // remove value 
     withdrawField.value = "";
