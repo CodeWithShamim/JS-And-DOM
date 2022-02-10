@@ -12,6 +12,7 @@ depositButton.addEventListener('click', function() {
     // balanceValue = balance.innerText - depositValue;
     // balance.innerText = balanceValue;
     // add condition
+
     if (depositValue == "") {
         alert("Please! choose your deposit amount");
     }
@@ -19,7 +20,14 @@ depositButton.addEventListener('click', function() {
     //     alert("Choose only number value");
     // } 
     else {
-        deposit.innerText += depositValue;
+        previousDepositValue = parseFloat(deposit.innerText);
+        newDepositValue = parseFloat(depositValue);
+        deposit.innerText = previousDepositValue + newDepositValue;
+
+        // balance 
+        const balanceText = balance.innerText;
+        const newBalance = parseFloat(balanceText);
+        balance.innerText = newBalance + newDepositValue;
     }
     // remove value
     depositField.value = "";
@@ -35,7 +43,9 @@ withdrawButton.addEventListener('click', function() {
     if (withdrawValue == "") {
         alert("Please! choose your withdraw amount");
     } else {
-        withdraw.innerText += withdrawValue;
+        previousWithdrawValue = parseFloat(withdraw.innerText);
+        newWithdrawValue = parseFloat(withdrawValue);
+        withdraw.innerText = previousWithdrawValue + newWithdrawValue;
     }
     // remove value 
     withdrawField.value = "";
