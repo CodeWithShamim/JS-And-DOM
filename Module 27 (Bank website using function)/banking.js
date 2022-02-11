@@ -6,16 +6,11 @@ let balance = document.getElementById('balance');
 
 
 // create a function and reduce code 
-function getInputValue(inputId, item) {
+function getInputValue(inputId) {
     const inputField = document.getElementById(inputId);
     const valueText = inputField.value;
     // remove value
     inputField.value = "";
-    // add condition
-    if (valueText == "") {
-        alert(`Please! choose your ${item} amount`);
-
-    }
     return valueText;
 }
 
@@ -34,16 +29,29 @@ function updateValue(Value, textValue, isAdd) {
     }
 }
 
+// Error handling function 
+function errorHandle(depositValue) {
+    const inputField = document.getElementById(depositValue);
+    const valueText = inputField.value;
+    return valueText;
+}
+
 
 // Deposit & Withdraw 
 
 // Deposit
 const depositButton = document.getElementById('deposit-btn');
 depositButton.addEventListener('click', function() {
+    // call for error handle 
+    const valueText = errorHandle('deposit-value')
 
-    const depositValue = getInputValue('deposit-value', 'Deposit');
-    updateValue(depositValue, deposit, true);
-
+    if (valueText > 0 && valueText <= 10000) {
+        const depositValue = getInputValue('deposit-value', 'Deposit');
+        updateValue(depositValue, deposit, true);
+    } else {
+        const inputField = document.getElementById('deposit-value');
+        inputField.value = '';
+    }
 
 
 
@@ -53,6 +61,20 @@ depositButton.addEventListener('click', function() {
 // withdraw 
 const withdrawButton = document.getElementById('withdraw-btn');
 withdrawButton.addEventListener('click', function() {
-    const withdrawValue = getInputValue('withdraw-value', 'Withdraw');
-    updateValue(withdrawValue, withdraw, false);
+    // call for error handle 
+    const valueText = errorHandle('withdraw-value')
+
+    const withdrawAmount = parseFloat(balance.innerText);
+    if (valueText > withdrawAmount) {
+        alert("Error! You can't withdraw right now!!")
+    } else if (valueText > 0 && valueText <= 10000) {
+
+        const withdrawValue = getInputValue('withdraw-value', 'Withdraw');
+        updateValue(withdrawValue, withdraw, false);
+    } else {
+        const inputField = document.getElementById('withdraw-value');
+        inputField.value = '';
+    }
+
+
 })
