@@ -1,4 +1,4 @@
-<style>body {
+body {
     font-family: "Poppins", sans-serif !important;
 }
 
@@ -12,12 +12,12 @@
 }
 
 .color-3 {
-    background-color: #0353a4
+    background-color: #0353a4;
 }
 
 .color-4 {
     background-color: #023e7d;
-    color: white
+    color: white;
 }
 
 .input-card {
@@ -28,9 +28,9 @@
 
 .print-button,
 .download-button {
-    color: #1D9AF2;
-    background-color: #292D3E;
-    border: 1px solid #1D9AF2;
+    color: #1d9af2;
+    background-color: #292d3e;
+    border: 1px solid #1d9af2;
     border-radius: 4px;
     padding: 0 15px;
     cursor: pointer;
@@ -48,5 +48,3 @@
     box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
     transform: translateX(-3px);
 }
-
-</style>
