@@ -20,6 +20,23 @@ function updateCaseNumber(product, isIncreasing) {
         const productPrice = document.getElementById(product + '-price');
         productPrice.innerText = productNumber * 1219;
     }
+
+    // calculate subtotal, tax and grandTotal
+
+    const phonePrice = document.getElementById('phone-price');
+    const casePrice = document.getElementById('case-price');
+    console.log(phonePrice.innerText)
+
+    // subtotal
+    const subTotal = document.getElementById('sub-total');
+    subTotal.innerText = parseInt(phonePrice.innerText) + parseInt(casePrice.innerText);
+    // tax
+    const tax = document.getElementById('tax');
+    const totalTaxPrice = parseInt(subTotal.innerText) * .2
+    tax.innerText = totalTaxPrice.toFixed(2);
+    // grandTotal
+    const grandTotal = document.getElementById('grand-total');
+    grandTotal.innerText = parseFloat(subTotal.innerText) + parseFloat(tax.innerText);
 }
 
 // handle phone increase decrease events
