@@ -81,5 +81,9 @@ document.getElementById("apply-btn").addEventListener("click", function() {
 
     } else {
 
+        if (code == '') {
+            alert('Please put your coupon code!')
+        }
+
     }
 })
