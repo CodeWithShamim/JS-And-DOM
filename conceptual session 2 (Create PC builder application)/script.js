@@ -90,6 +90,10 @@ document.getElementById("apply-btn").addEventListener("click", function() {
         } else {
             const couponTextFalse = document.getElementById('applied-text-false');
             couponTextFalse.style.display = 'block';
+            // remove 
+            const couponTextTrue = document.getElementById('applied-text');
+            couponTextTrue.style.display = 'none';
+
         }
 
     }
