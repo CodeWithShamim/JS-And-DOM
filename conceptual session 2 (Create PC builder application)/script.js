@@ -75,14 +75,21 @@ document.getElementById("apply-btn").addEventListener("click", function() {
 
         if (countNumber == 0) {
             total.innerText = totalPrice;
+            const couponTextTrue = document.getElementById('applied-text');
+            couponTextTrue.style.display = 'block';
+            // remove 
+            const couponTextFalse = document.getElementById('applied-text-false');
+            couponTextFalse.style.display = 'none';
         } else {
             alert('Not allow coupon!')
         }
 
     } else {
-
         if (code == '') {
-            alert('Please put your coupon code!')
+            document.getElementById('applied-text-false').style.display = 'block';
+        } else {
+            const couponTextFalse = document.getElementById('applied-text-false');
+            couponTextFalse.style.display = 'block';
         }
 
     }
