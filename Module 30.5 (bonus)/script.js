@@ -5,18 +5,17 @@ function getValue(players, isValue) {
         player.style.border = '2px solid red';
         player.style.borderRadius = '20px';
         player.style.fontSize = '24px';
-
-
-        player.addEventListener('click', function(e) {
-            // e.target.parentNode.removeChild(e.target)
-        })
-
     }
 
 }
 
 const players = document.getElementsByClassName('player');
-getValue(players, isValue = true)
+getValue(players)
+const parent = document.getElementById('players');
+// add bubble---------------------------
+parent.addEventListener('click', function(event) {
+    event.target.parentNode.removeChild(event.target)
+})
 
 
 document.getElementById('submit').addEventListener('click', function() {
@@ -26,6 +25,11 @@ document.getElementById('submit').addEventListener('click', function() {
 
     const parent = document.getElementById('players');
     parent.appendChild(div);
-    getValue(players, isValue = false)
+    getValue(players)
+        // add bubble---------------------------
+    parent.addEventListener('click', function(event) {
+        event.target.parentNode.removeChild(event.target)
+    })
+
 
 })
